@@ -1,0 +1,18 @@
+name: Hello World
+author: BDK
+description: a simple private action
+inputs:
+  who-to-greet:
+    description: 'who to greet'
+    required: true
+    default: Brian
+outputs:
+  time:
+    description: 'the greeting time'
+runs:
+  using: 'docker'
+  main: 'Dockerfile'
+  entrypoint: 
+  args:
+    - ${{ inputs.who-to-greet }}
+

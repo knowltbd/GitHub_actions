@@ -7,10 +7,13 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Simple JS Action
-        id: greet
-        uses: actions/hello-world-javascript-action@v1
+      - name: Simple Docker Action
+        id: hello
+        uses: ./.github/actions/hello-docker
         with: 
           who-to-greet: Brian
       - name: Log Greeting Time
-        run: echo "${{ steps.greet.outputs.time }}"
+        run: |
+          echo "Time: ${{ steps.greet.outputs.time }}"
+          echo $HELLO
+          
