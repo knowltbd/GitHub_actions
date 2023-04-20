@@ -11,7 +11,9 @@ echo "Hello $1"
 
 # create and output from the process
 time=`date`
-echo "::set-output name=time::$time"
+# depricated: echo "::set-output name=time::$time"
+echo "{time}={$time}" >> $GITHUB_OUTPUT
+
 
 # create a grouped logging
 echo "::group::Some expandable logs"
@@ -20,4 +22,4 @@ echo "some more logging"
 echo "::endgroup::"
 
 # sent an environmental value
-echo "::set-env name=HELLO::hello"
+# depricated: echo "::set-env name=HELLO::hello"
