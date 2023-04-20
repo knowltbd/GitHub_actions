@@ -12,7 +12,7 @@ echo "Hello $1"
 # create and output from the process
 time=$(date)
 # depricated: echo "::set-output name=time::$time"
-echo "{time}={$time}" >> $GITHUB_OUTPUT
+echo "time=$time" >> $GITHUB_OUTPUT
 
 
 # create a grouped logging
