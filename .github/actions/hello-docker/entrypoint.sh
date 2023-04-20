@@ -10,7 +10,7 @@ echo "::add-mask::$1"
 echo "Hello $1"
 
 # create and output from the process
-time=`date`
+time=$(date)
 # depricated: echo "::set-output name=time::$time"
 echo "{time}={$time}" >> $GITHUB_OUTPUT
 
